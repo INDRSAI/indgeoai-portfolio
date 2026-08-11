@@ -1,1 +1,2 @@
-INDGEOAI V4 — alignment/cache fix
+INDGEOAI V5 — rebuild
+
