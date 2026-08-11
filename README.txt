@@ -1,2 +1,1 @@
-INDGEOAI V5 — rebuild
-
+INDGEOAI V6 — updated design
