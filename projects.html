@@ -1,1 +1,77 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="INDGEOAI — Geospatial AI, Remote Sensing and GIS portfolio."><title>Projects — INDGEOAI</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body><div class="grid-bg"></div><header class="topbar"><div class="topbar-left"><button class="hamburger" id="hamburger">☰</button><a href="index.html" class="brand"><span class="brand-mark"></span>INDGEOAI</a><div class="crumb">Layer / <b>Projects</b></div></div><div class="coord-readout" id="coordReadout">0.0000°, 0.0000°</div></header><div class="scrim" id="scrim"></div><aside class="sidebar" id="sidebar"><div class="side-section"><div class="side-label">Navigation Layers</div><div class="layer-list"><a href="index.html" class="layer-item"><span class="layer-icon">01</span>Overview<span class="dot" style="background:var(--coral)"></span></a><a href="projects.html" class="layer-item active"><span class="layer-icon">02</span>Projects<span class="dot" style="background:var(--teal)"></span></a><a href="experience.html" class="layer-item"><span class="layer-icon">03</span>Experience<span class="dot" style="background:var(--gold)"></span></a><a href="contact.html" class="layer-item"><span class="layer-icon">04</span>Contact<span class="dot" style="background:var(--blue)"></span></a></div></div><div class="side-section"><div class="side-label">Legend</div><div class="legend"><div><span style="background:var(--teal)"></span>AI / Machine Learning</div><div><span style="background:var(--gold)"></span>Remote Sensing</div><div><span style="background:var(--blue)"></span>GIS / Enterprise</div></div></div><div class="side-meta">PROJECT LAYERS: 6<br>STATUS: <strong>CURATED</strong><br>MODE: Public-safe</div></aside><main class="main"><div class="page"><section class="section reveal"><div class="section-head"><div><div class="eyebrow">Selected Work</div><h1 class="section-title" style="font-size:clamp(38px,5vw,62px)">Geospatial AI & remote-sensing casework.</h1></div><p class="section-copy">A curated selection spanning deep learning, terrain ML, SAR, OBIA and classification.</p></div><div class="project-toolbar"><div class="filter-row"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="Deep Learning">Deep Learning</button><button class="filter-btn" data-filter="ML / Terrain">ML / Terrain</button><button class="filter-btn" data-filter="SAR">SAR</button><button class="filter-btn" data-filter="OBIA">OBIA</button><button class="filter-btn" data-filter="Classification">Classification</button></div></div><div class="project-grid"><div class="project-card" data-cat="Deep Learning"><div class="project-top"><div class="grid-ref">AUSTRALIA · 2026</div><div class="tag">Deep Learning</div></div><h3>Multispectral Land-Cover Classification</h3><p>Semantic segmentation using RGB + NIR imagery with U-Net and ResNet-34 for complex vegetation and land-cover classes.</p><div class="metric-line">Focus · <span>generalization, class separation, tiled inference</span></div></div><div class="project-card" data-cat="ML / Terrain"><div class="project-top"><div class="grid-ref">AUSTRALIA · 2026</div><div class="tag">ML / Terrain</div></div><h3>Terrain-Based Gully Detection</h3><p>Random Forest workflow using terrain and hydrological features from high-resolution DEMs, evaluated across survey years.</p><div class="metric-line">Test AUC <span>0.9650</span> · F1 <span>0.8224</span></div></div><div class="project-card" data-cat="SAR"><div class="project-top"><div class="grid-ref">UNITED STATES · 2025</div><div class="tag">SAR</div></div><h3>Wetland Classification via SAR</h3><p>L-band SAR processing with calibration, speckle filtering and decomposition techniques for wetland extraction.</p><div class="metric-line">Focus · <span>forested, emergent & open-water classes</span></div></div><div class="project-card" data-cat="OBIA"><div class="project-top"><div class="grid-ref">CANADA · 2024</div><div class="tag">OBIA</div></div><h3>Industrial Wetland Mapping</h3><p>Object-based analysis using spectral indices, elevation and canopy-height information for wetland mapping.</p><div class="metric-line">Delivery · <span>validated multi-class mapping</span></div></div><div class="project-card" data-cat="Classification"><div class="project-top"><div class="grid-ref">MIDDLE EAST · 2024</div><div class="tag">Classification</div></div><h3>Pervious / Impervious Surface Mapping</h3><p>Urban surface classification supporting drainage modeling and difficult spectral separation.</p><div class="metric-line">Focus · <span>city-scale validated surface data</span></div></div><div class="project-card" data-cat="OBIA"><div class="project-top"><div class="grid-ref">UNITED STATES · 2024</div><div class="tag">OBIA</div></div><h3>Coastal Ecology Land-Cover Mapping</h3><p>Ecological classification refined with subject-matter review to support habitat assessment.</p><div class="metric-line">Focus · <span>ecological class interpretation</span></div></div></div></section></div><footer class="page-footer">© 2026 INDGEOAI · HTTPS enabled · Static portfolio · No tracking scripts</footer></main><script src="app.js"></script></body></html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="INDGEOAI — Geospatial AI, Remote Sensing and GIS portfolio.">
+<title>Projects | INDGEOAI</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head><body><div class="grid-overlay"></div>
+<header class="site-header"><div class="container nav">
+<a href="index.html" class="logo-wrap"><img src="assets/logo.png" class="logo-img" alt="INDGEOAI"></a>
+<button class="menu-btn" aria-label="Toggle menu">Menu</button>
+<nav class="nav-links"><a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="skills.html" class="">Skills</a><a href="projects.html" class="active">Projects</a><a href="experience.html" class="">Experience</a><a href="publications.html" class="">Publications</a><a href="contact.html" class="">Contact</a></nav>
+<div class="nav-actions"><a class="cta" href="contact.html">Get In Touch →</a></div>
+</div></header><main>
+<section class="container page-hero"><div class="eyebrow">Our Work</div><h1>Selected <span>Projects.</span></h1><p>Public-safe summaries of geospatial AI and remote-sensing work. Client names, exact project locations, coordinates and confidential deliverables are intentionally omitted.</p></section>
+<section class="section"><div class="container">
+<div class="filter-row">
+<button class="filter-btn active" data-filter="all">All Projects</button>
+<button class="filter-btn" data-filter="Terrain">Terrain & Elevation</button>
+<button class="filter-btn" data-filter="Vegetation">Vegetation</button>
+<button class="filter-btn" data-filter="Water">Water</button>
+<button class="filter-btn" data-filter="Computer Vision">Computer Vision</button>
+<button class="filter-btn" data-filter="SAR">SAR</button>
+</div>
+<div class="project-grid">
+<div class="card project-card" data-cat="Terrain"><div class="project-visual">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="220" fill="#12354a"/>
+<g fill="none" stroke="#27c4f4" stroke-opacity=".35">
+<path d="M-20 30 C90 0 130 70 220 38 S390 8 620 50"/>
+<path d="M-30 65 C70 38 160 95 250 72 S430 40 630 80"/>
+<path d="M-40 105 C75 80 165 132 278 106 S450 80 640 120"/>
+<path d="M-30 150 C90 116 175 170 292 144 S470 120 630 158"/>
+<path d="M-20 194 C110 153 218 205 330 185 S490 162 625 201"/>
+</g><path d="M300 14 C270 62 330 82 294 118 C260 150 310 174 270 210" fill="none" stroke="#f2b84b" stroke-width="7" stroke-linecap="round"/>
+</svg></div><span class="tag">Terrain</span><h3>Terrain Modeling with ML</h3><p>Machine-learning workflow for gully extraction using high-resolution DEM terrain and hydrological features.</p><div class="metric">AUC <b>0.9650</b> · F1 <b>0.8224</b></div></div>
+<div class="card project-card" data-cat="Vegetation"><div class="project-visual">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="220" fill="#173c35"/>
+<path d="M0 150 C80 120 120 135 185 105 C250 75 315 130 385 86 C455 42 520 80 600 48 L600 220 L0 220Z" fill="#255c49"/>
+<path d="M0 184 C105 142 175 188 275 148 C365 110 470 170 600 118 L600 220 L0 220Z" fill="#5a7c38"/>
+<circle cx="430" cy="72" r="26" fill="#9bd63b" opacity=".75"/>
+</svg></div><span class="tag">Deep Learning</span><h3>Vegetation Mapping & Classification</h3><p>Multispectral semantic segmentation for complex vegetation and land-cover classes.</p><div class="metric">U-Net · ResNet-34</div></div>
+<div class="card project-card" data-cat="Water"><div class="project-visual">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="220" fill="#123d55"/>
+<path d="M0 135 C80 110 135 165 215 130 C290 95 350 122 420 98 C490 74 540 96 600 78 L600 220 L0 220Z" fill="#1c8da6"/>
+<path d="M0 170 C90 150 160 190 240 166 C330 138 420 182 600 135" fill="none" stroke="#27c4f4" stroke-width="3" opacity=".65"/>
+</svg></div><span class="tag">Water</span><h3>Water Body Detection</h3><p>Adaptive spectral and image-analysis workflows for water extraction from high-resolution imagery.</p><div class="metric">Remote Sensing · Automation</div></div>
+<div class="card project-card" data-cat="Computer Vision"><div class="project-visual">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="220" fill="#18372f"/>
+<g fill="#4d7f50"><circle cx="80" cy="70" r="24"/><circle cx="160" cy="125" r="31"/><circle cx="280" cy="72" r="27"/><circle cx="410" cy="142" r="33"/><circle cx="520" cy="82" r="29"/></g>
+<g fill="none" stroke="#9bd63b" stroke-width="2"><rect x="50" y="40" width="60" height="60"/><rect x="125" y="90" width="70" height="70"/><rect x="248" y="40" width="64" height="64"/><rect x="372" y="104" width="76" height="76"/><rect x="486" y="48" width="68" height="68"/></g>
+</svg></div><span class="tag">Computer Vision</span><h3>Tree Health Monitoring</h3><p>Object detection, geolocation and satellite time-series monitoring for tree-level health assessment.</p><div class="metric">YOLOv11 · Sentinel-2</div></div>
+<div class="card project-card" data-cat="SAR"><div class="project-visual">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="220" fill="#123d55"/>
+<path d="M0 135 C80 110 135 165 215 130 C290 95 350 122 420 98 C490 74 540 96 600 78 L600 220 L0 220Z" fill="#1c8da6"/>
+<path d="M0 170 C90 150 160 190 240 166 C330 138 420 182 600 135" fill="none" stroke="#27c4f4" stroke-width="3" opacity=".65"/>
+</svg></div><span class="tag">SAR</span><h3>Wetland Classification via SAR</h3><p>L-band SAR processing with calibration, speckle filtering and decomposition for wetland class extraction.</p><div class="metric">SAR · Wetland Mapping</div></div>
+<div class="card project-card" data-cat="Vegetation"><div class="project-visual">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="220" fill="#173c35"/>
+<path d="M0 150 C80 120 120 135 185 105 C250 75 315 130 385 86 C455 42 520 80 600 48 L600 220 L0 220Z" fill="#255c49"/>
+<path d="M0 184 C105 142 175 188 275 148 C365 110 470 170 600 118 L600 220 L0 220Z" fill="#5a7c38"/>
+<circle cx="430" cy="72" r="26" fill="#9bd63b" opacity=".75"/>
+</svg></div><span class="tag">OBIA</span><h3>Object-Based Wetland Mapping</h3><p>Object-based classification using spectral indices, elevation and canopy-height information.</p><div class="metric">OBIA · Multi-class Mapping</div></div>
+</div></div></section>
+</main><footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><img src="assets/logo.png" class="footer-logo" alt="INDGEOAI"><p style="margin-top:12px">Geospatial intelligence, remote sensing and applied AI for practical spatial decision-making.</p></div>
+<div class="footer-col"><h4>Explore</h4><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a></div>
+<div class="footer-col"><h4>Career</h4><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></div>
+<div class="footer-col"><h4>Privacy</h4><p>No phone number, home address, tracking scripts or confidential client material is published.</p></div>
+</div><div class="footer-bottom"><span>© 2026 INDGEOAI</span><span>HTTPS · Static site · GitHub Pages</span></div>
+</div></footer><script src="app.js"></script></body></html>
