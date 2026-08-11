@@ -1,0 +1,1 @@
+Replace the six website files in your GitHub repository root. GitHub Pages will redeploy automatically. Replace email and LinkedIn placeholders before publishing.
