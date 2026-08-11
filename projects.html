@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Geospatial AI &amp; Remote Sensing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="graticule"></div>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+    <div class="brand"><span class="brand-dot"></span>PORTFOLIO.GIS</div>
+    <div class="crumb">LAYER: <span>Projects</span></div>
+  </div>
+  <div class="coord-readout" id="coordReadout">0.0000°, 0.0000°</div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="panel-label">Layers</div>
+  <div class="layer-list">
+    <a href="index.html" class="layer-item"><span class="layer-check"></span>Overview<span class="layer-swatch" style="background:var(--coral)"></span></a>
+    <a href="projects.html" class="layer-item active"><span class="layer-check"></span>Projects<span class="layer-swatch" style="background:var(--cyan)"></span></a>
+    <a href="experience.html" class="layer-item"><span class="layer-check"></span>Experience<span class="layer-swatch" style="background:var(--amber)"></span></a>
+    <a href="contact.html" class="layer-item"><span class="layer-check"></span>Contact</a>
+  </div>
+
+  <div class="panel-label">Legend</div>
+  <div class="legend-box">
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--cyan)"></span>AI / Machine Learning</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--amber)"></span>Remote Sensing</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--coral)"></span>Currently Viewing</div>
+  </div>
+
+  <div class="sidebar-meta">
+    LAYER COUNT: 6<br>
+    AOI TOTAL: ~1,900 km²<br>
+    STATUS: <span style="color:var(--cyan)">ACTIVE</span>
+  </div>
+</aside>
+
+<div class="corner-chrome">
+  <div class="scale-bar">1 : 25,000<div class="bar"></div></div>
+  <svg class="compass" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" stroke="#7d8b99" stroke-width="1"/>
+    <path d="M20 4 L24 20 L20 36 L16 20 Z" fill="#7d8b99"/>
+    <text x="20" y="12" fill="#e7ebee" font-size="7" font-family="monospace" text-anchor="middle">N</text>
+  </svg>
+</div>
+
+<main class="main">
+  <div class="page">
+
+    <section class="reveal" style="margin-bottom:8px;">
+      <div class="eyebrow">Selected Work</div>
+      <h1 class="display" style="font-size:clamp(28px,4vw,42px);">Flagship projects, by grid reference.</h1>
+      <p class="lede" style="margin-top:16px;">A sample of production geospatial AI and remote sensing deliverables — each tagged to the site it was built for.</p>
+      <div class="mini-rule"></div>
+    </section>
+
+    <div class="filter-row reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Deep Learning">Deep Learning</button>
+      <button class="filter-btn" data-filter="ML / Terrain">ML / Terrain</button>
+      <button class="filter-btn" data-filter="SAR">SAR</button>
+      <button class="filter-btn" data-filter="OBIA">OBIA</button>
+      <button class="filter-btn" data-filter="Classification">Classification</button>
+    </div>
+
+    <div class="project-grid reveal">
+
+      <div class="project-card" data-cat="Deep Learning">
+        <div class="project-top">
+          <div class="grid-ref">20.8°S, 115.4°E — BARROW ISLAND, AUS</div>
+          <div class="tag">Deep Learning · 2026</div>
+        </div>
+        <h3>Multispectral Land-Cover Classification</h3>
+        <p>Custom semantic segmentation model built from scratch — U-Net with a ResNet-34 backbone — classifying nine land-cover classes across inland and coastal terrain from RGB + NIR imagery.</p>
+        <div class="metric-line">Trained on 6 grids · <span>94%+ F1-score</span> · mIoU 0.70</div>
+      </div>
+
+      <div class="project-card" data-cat="ML / Terrain">
+        <div class="project-top">
+          <div class="grid-ref">16.7°S, 128.4°E — ARGYLE, AUS</div>
+          <div class="tag">ML / Terrain · 2026</div>
+        </div>
+        <h3>Terrain-Based Gully Detection</h3>
+        <p>Terrain-derived ML model trained on 6.188M samples across 13 project areas using a 9cm DEM, validated for temporal generalization across DEM years without retraining.</p>
+        <div class="metric-line">Test AUC <span>0.9650</span> · F1 0.8224 · ~250hrs saved via reused training data</div>
+      </div>
+
+      <div class="project-card" data-cat="SAR">
+        <div class="project-top">
+          <div class="grid-ref">44.5°N, 89.5°W — WISCONSIN, USA</div>
+          <div class="tag">SAR · 2025</div>
+        </div>
+        <h3>Wetland Classification via SAR Imagery</h3>
+        <p>Wetland extraction over 250 sq km using L-band ALOS PALSAR data — radiometric calibration, speckle filtering, and Freeman-Durden / Touzi decomposition for rule-based classification.</p>
+        <div class="metric-line">250 sq km AOI · Forested / Emergent / Open Water classes</div>
+      </div>
+
+      <div class="project-card" data-cat="OBIA">
+        <div class="project-top">
+          <div class="grid-ref">53.7°N, 113.2°W — ALBERTA, CAN</div>
+          <div class="tag">OBIA · 2024</div>
+        </div>
+        <h3>Industrial Heartland Wetland Mapping</h3>
+        <p>Led a five-person remote sensing team mapping wetlands across 27 sq km in seven priority zones, combining NDVI, DEM, and canopy-height layers in an object-based classification.</p>
+        <div class="metric-line">14 land-cover classes · 7 wetland subclasses</div>
+      </div>
+
+      <div class="project-card" data-cat="Classification">
+        <div class="project-top">
+          <div class="grid-ref">24.5°N, 54.4°E — ABU DHABI, UAE</div>
+          <div class="tag">Classification · 2024</div>
+        </div>
+        <h3>Pervious / Impervious Surface Mapping</h3>
+        <p>Directed a five-member team classifying urban surfaces to support stormwater and drainage modeling, resolving spectral overlap between sand, roads, and built-up areas.</p>
+        <div class="metric-line">Delivered validated citywide surface dataset</div>
+      </div>
+
+      <div class="project-card" data-cat="OBIA">
+        <div class="project-top">
+          <div class="grid-ref">29.1°N, 90.4°W — LOUISIANA, USA</div>
+          <div class="tag">OBIA · 2024</div>
+        </div>
+        <h3>Coastal Ecology Land Cover Mapping</h3>
+        <p>150 sq km coastal classification into 14 ecological classes, refined with a coastal ecologist to support habitat assessment and conservation planning.</p>
+        <div class="metric-line">150 sq km · 14 ecological classes</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="page-footer">© 2026 — Static site, no tracking scripts, no third-party embeds.</footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
