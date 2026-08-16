@@ -704,3 +704,31 @@ main > .section{
   margin-top:0 !important;
   padding-top:24px;
 }
+/* =========================================================
+   V11 CTA COLOR — match the blue end of "Intelligence"
+   ========================================================= */
+
+.btn-primary{
+  background:var(--blue) !important;
+  border-color:var(--blue) !important;
+  color:#061c23 !important;
+}
+
+.btn-primary:hover{
+  background:var(--cyan) !important;
+  border-color:var(--cyan) !important;
+  color:#061c23 !important;
+}
+
+/* Header Get In Touch pill */
+.header-cta{
+  background:var(--blue) !important;
+  border-color:var(--blue) !important;
+  color:#061c23 !important;
+}
+
+.header-cta:hover{
+  background:var(--cyan) !important;
+  border-color:var(--cyan) !important;
+  color:#061c23 !important;
+}
