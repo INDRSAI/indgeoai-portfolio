@@ -1,67 +1,154 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="INDGEOAI — Geospatial AI, Remote Sensing and GIS portfolio.">
-<title>Experience | INDGEOAI</title>
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="indgeoai-v5.css?v=8">
-</head><body><div class="bg-grid"></div><header class="site-header"><div class="container nav">
-<a href="index.html"><img class="logo-img" src="assets/logo.png" alt="INDGEOAI logo"></a>
-<button class="menu-btn" aria-label="Open navigation">Menu</button>
-<nav class="nav-links"><a href="index.html" class="">Home</a><a href="about.html" class="">About</a><a href="skills.html" class="">Skills</a><a href="projects.html" class="">Projects</a><a href="experience.html" class="active">Experience</a><a href="publications.html" class="">Publications</a><a href="contact.html" class="">Contact</a></nav>
-<div class="nav-actions"><a class="header-cta" href="contact.html">Get In Touch →</a></div>
-</div></header><main>
-<section class="container page-hero reveal"><div><div class="kicker">Experience</div><h1>My journey in <span class="gradient-text">Geospatial Intelligence & AI.</span></h1><p>Progression from GIS engineering and infrastructure mapping into technical leadership, remote sensing and applied GeoAI.</p></div><div class="page-scene"><img class="page-hero-image" src="assets/hero-geoai-v2.jpg" alt="Synthetic GeoAI globe, satellite, drone and map layers"></div></section>
-<section class="section section-border"><div class="container">
-<div class="career-wrap reveal"><div class="dash-title">Career Journey</div><div class="career-track">
-<div class="career-step"><div class="career-year">2012 – 2014</div><h3>GIS Engineer</h3><p>Spatial databases, georeferencing and hydraulic-modeling support.</p></div>
-<div class="career-step"><div class="career-year">2014 – 2016</div><h3>GIS Engineer</h3><p>Infrastructure GIS, imagery integration and project coordination.</p></div>
-<div class="career-step"><div class="career-year">2016 – 2020</div><h3>Senior GIS Expert</h3><p>GIS leadership for utility and water-supply delivery programs.</p></div>
-<div class="career-step"><div class="career-year">2020 – 2022</div><h3>Project Manager</h3><p>End-to-end technical delivery, planning and project documentation.</p></div>
-<div class="career-step"><div class="career-year">2022 – Present</div><h3>Associate Principal GIS Analyst</h3><p>International GIS, remote sensing, automation and GeoAI delivery.</p></div>
-</div></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Geospatial AI &amp; Remote Sensing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-<div class="dashboard-grid">
-<div class="dash-card reveal"><div class="dash-title">Leadership Highlights</div><div class="dash-list">
-<div class="dash-row"><div class="dash-icon">◎</div><div><b>Technical Leadership</b><span>Lead multidisciplinary geospatial delivery and methodology development.</span></div></div>
-<div class="dash-row"><div class="dash-icon">✓</div><div><b>QA / QC</b><span>Validation, review and reproducible production workflows.</span></div></div>
-<div class="dash-row"><div class="dash-icon">↗</div><div><b>Automation</b><span>Reduce repetitive processing through Python and workflow design.</span></div></div>
-</div></div>
+<div class="graticule"></div>
 
-<div class="dash-card reveal"><div class="dash-title">Core Skills</div><div class="skill-mini">
-<div>GIS & Spatial Analysis</div><div>Remote Sensing</div><div>Machine Learning</div><div>Deep Learning</div><div>Python & Automation</div><div>Web/API Deployment</div><div>Data Visualization</div><div>Spatial Databases</div>
-</div></div>
+<header class="topbar">
+  <div class="topbar-left">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+    <div class="brand"><span class="brand-dot"></span>PORTFOLIO.GIS</div>
+    <div class="crumb">LAYER: <span>Experience</span></div>
+  </div>
+  <div class="coord-readout" id="coordReadout">0.0000°, 0.0000°</div>
+</header>
 
-<div class="dash-card reveal"><div class="dash-title">Education</div>
-<div class="education-item"><div class="dash-icon">◇</div><div><b>M.Tech · Applied AI</b><span>Completed 2025</span></div></div>
-<div class="education-item"><div class="dash-icon">◇</div><div><b>Advanced AI & Data Science</b><span>One-year diploma · 2023</span></div></div>
-<div class="education-item"><div class="dash-icon">◇</div><div><b>Master · GIS & Remote Sensing</b><span>Completed 2012</span></div></div>
-<div class="education-item"><div class="dash-icon">◇</div><div><b>Master · Geography</b><span>Pune University</span></div></div>
+<div class="scrim" id="scrim"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="panel-label">Layers</div>
+  <div class="layer-list">
+    <a href="index.html" class="layer-item"><span class="layer-check"></span>Overview<span class="layer-swatch" style="background:var(--coral)"></span></a>
+    <a href="projects.html" class="layer-item"><span class="layer-check"></span>Projects<span class="layer-swatch" style="background:var(--cyan)"></span></a>
+    <a href="experience.html" class="layer-item active"><span class="layer-check"></span>Experience<span class="layer-swatch" style="background:var(--amber)"></span></a>
+    <a href="contact.html" class="layer-item"><span class="layer-check"></span>Contact</a>
+  </div>
+
+  <div class="panel-label">Legend</div>
+  <div class="legend-box">
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--cyan)"></span>AI / Machine Learning</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--amber)"></span>Remote Sensing</div>
+    <div class="legend-item"><span class="legend-swatch" style="background:var(--coral)"></span>Currently Viewing</div>
+  </div>
+
+  <div class="sidebar-meta">
+    CAREER SPAN: 2012–2026<br>
+    ROLES: 5<br>
+    STATUS: <span style="color:var(--cyan)">ACTIVE</span>
+  </div>
+</aside>
+
+<div class="corner-chrome">
+  <div class="scale-bar">1 : 25,000<div class="bar"></div></div>
+  <svg class="compass" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" stroke="#7d8b99" stroke-width="1"/>
+    <path d="M20 4 L24 20 L20 36 L16 20 Z" fill="#7d8b99"/>
+    <text x="20" y="12" fill="#e7ebee" font-size="7" font-family="monospace" text-anchor="middle">N</text>
+  </svg>
 </div>
 
-<div class="dash-card reveal"><div class="dash-title">At a Glance</div><div class="glance">
-<div class="glance-item"><div class="dash-icon">◉</div><div><strong>13+</strong><span>Years Experience</span></div></div>
-<div class="glance-item"><div class="dash-icon">⌘</div><div><strong>50+</strong><span>Major Projects Delivered</span></div></div>
-<div class="glance-item"><div class="dash-icon">▤</div><div><strong>2</strong><span>Publications</span></div></div>
-<div class="glance-item"><div class="dash-icon" style="color:var(--gold)">✦</div><div><strong>4+</strong><span>Awards & Recognition</span></div></div>
-</div></div>
-</div>
+<main class="main">
+  <div class="page">
 
-<div class="bottom-dashboard">
-<div class="dash-card reveal"><div class="dash-title">Publications</div><ul class="bullet-list"><li>Automated tree counting from aerial imagery.</li><li>Tree geolocation and health monitoring with YOLOv11 + satellite data.</li></ul><a href="publications.html" style="display:inline-block;margin-top:10px;color:var(--teal);font-size:11px">View publications →</a></div>
-<div class="dash-card reveal"><div class="dash-title">Awards & Recognition</div><ul class="bullet-list"><li>Best performance & project management recognition.</li><li>Remote sensing project recognition.</li><li>Dashboard / digital delivery recognition.</li></ul></div>
-<div class="dash-card reveal"><div class="dash-title">Professional Contribution</div><ul class="bullet-list"><li>Technical mentoring and analyst support.</li><li>Knowledge sharing and guest lectures.</li><li>Applied AI integration within geospatial workflows.</li></ul></div>
-</div>
-</div></section>
-</main><footer class="footer"><div class="container">
-<div class="footer-grid">
-<div><img src="assets/logo.png" class="footer-logo" alt="INDGEOAI"><p style="margin-top:10px">Geospatial intelligence, remote sensing and applied AI for practical spatial decision-making.</p></div>
-<div class="footer-col"><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a></div>
-<div class="footer-col"><h4>Career</h4><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></div>
-<div class="footer-col"><h4>Privacy</h4><p>Client names, exact project locations, coordinates, private phone numbers and confidential project material are not published.</p></div>
-</div>
-<div class="footer-bottom">
-  <span>© 2026 INDGEOAI. All rights reserved.</span>
-</div>
-</div></footer><script src="indgeoai-v5.js?v=8"></script></body></html>
+    <section class="reveal" style="margin-bottom:48px;">
+      <div class="eyebrow">Career</div>
+      <h1 class="display" style="font-size:clamp(28px,4vw,42px);">Field-tested, from survey stakes to segmentation masks.</h1>
+      <div class="mini-rule"></div>
+    </section>
+
+    <section class="reveal" style="margin-bottom:64px;">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-role">Associate Principal GIS Analyst</div>
+          <div class="tl-meta">STANTEC, INDIA — JUN 2022 – PRESENT</div>
+          <ul>
+            <li>Lead GIS, remote sensing, and geospatial AI delivery for clients across North America, Australia, Europe, and the Middle East.</li>
+            <li>Design enterprise geospatial solutions using ArcGIS Online/Enterprise, Dashboards, and Field Maps.</li>
+            <li>Deploy AI/ML models for gully detection, wetland mapping, vegetation classification, and OCR extraction.</li>
+            <li>Automate geospatial workflows with Python, FME, FastAPI, and Power Automate.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">Project Manager</div>
+          <div class="tl-meta">DECCAN TECHNICAL CONSULTANT LLP, INDIA — NOV 2020 – JUN 2022</div>
+          <ul>
+            <li>Directed end-to-end water supply projects from planning through delivery.</li>
+            <li>Prepared Detailed Project Reports, budgets, and technical documentation for approvals.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">Senior GIS Expert</div>
+          <div class="tl-meta">SGI STUDIO GALLI INGEGNERIA INDIA PVT. LTD. — NOV 2016 – OCT 2020</div>
+          <ul>
+            <li>Led water supply and utility mapping under AMRUT, including the Kolhapur Municipal Corporation Reform Scheme.</li>
+            <li>Served as GIS Expert Reviewer for the World Bank-funded KUIDFC project.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">GIS Engineer</div>
+          <div class="tl-meta">INFRAPLAN ENGINEERING SERVICE PVT. LTD. — FEB 2014 – OCT 2016</div>
+          <ul>
+            <li>Led GIS for Peri-Urban Reform Water Supply Schemes under NRDWP.</li>
+            <li>Coordinated satellite imagery procurement and survey-data integration with NRSC.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-role">GIS Engineer</div>
+          <div class="tl-meta">SYNERGY ENGINEERING &amp; ENVIRONMENTAL SOLUTION — FEB 2012 – JAN 2014</div>
+          <ul>
+            <li>Procured and georeferenced satellite imagery for infrastructure and environmental planning.</li>
+            <li>Built and maintained digital GIS databases for hydraulic modeling.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" style="margin-bottom:56px;">
+      <div class="eyebrow">Education</div>
+      <h2 class="section-title">Grounding.</h2>
+      <div class="mini-rule"></div>
+      <div class="panel-grid-3">
+        <div class="panel"><h3>M.Tech, Applied AI</h3><p style="color:var(--text-muted); font-size:13.5px;">NIT Nagpur — 2025</p></div>
+        <div class="panel"><h3>Master, GIS &amp; Remote Sensing</h3><p style="color:var(--text-muted); font-size:13.5px;">University of Kumaun, Nainital — 2012</p></div>
+        <div class="panel"><h3>Master, Geography</h3><p style="color:var(--text-muted); font-size:13.5px;">Pune University</p></div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="eyebrow">Recognition</div>
+      <h2 class="section-title">Publications &amp; Awards</h2>
+      <div class="mini-rule"></div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <span>Geotagging-Based Automated Tree Counting Using Aerial Imaging From Drone</span>
+          <span class="pub-year">IEEE, 2025</span>
+        </div>
+        <div class="pub-item">
+          <span>Automated Tree Geolocation and Health Monitoring Using YOLOv11 and Integrated Drone–Satellite Remote Sensing</span>
+          <span class="pub-year">Springer, 2025 (in press)</span>
+        </div>
+      </div>
+      <div class="award-grid">
+        <div class="award-item">Best Performance &amp; Project Management Award — SGI Studio Galli Ingegneria India Pvt. Ltd.</div>
+        <div class="award-item">Certificate of Appreciation, Geospatial Dept., Shivaji University — guest lectures, two consecutive years</div>
+        <div class="award-item">Recognition Award — World Energy Remote Sensing Project, Stantec</div>
+        <div class="award-item">Recognition Award — Jackson Project (Power BI Dashboard), Stantec</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="page-footer">© 2026 — Static site, no tracking scripts, no third-party embeds.</footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

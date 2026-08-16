@@ -1,35 +1,41 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="INDGEOAI — Geospatial AI, Remote Sensing and GIS portfolio.">
+<style>
+html,body{margin:0;width:100%;overflow-x:hidden}
+.site-header{position:sticky;top:0;z-index:50}
+.container{width:min(1240px,calc(100% - 42px));margin:0 auto}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.logo-img{display:block;height:52px;width:auto;max-width:245px;object-fit:contain}
+.hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:46px;align-items:center}
+@media(max-width:1050px){.hero{grid-template-columns:1fr}}
+</style>
+
 <title>About | INDGEOAI</title>
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="indgeoai-v5.css?v=8">
-</head><body><div class="bg-grid"></div><header class="site-header"><div class="container nav">
-<a href="index.html"><img class="logo-img" src="assets/logo.png" alt="INDGEOAI logo"></a>
-<button class="menu-btn" aria-label="Open navigation">Menu</button>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="indgeoai-v4.css?v=4"></head><body><div class="grid-overlay"></div>
+<header class="site-header"><div class="container nav">
+<a href="index.html" class="logo-wrap"><img src="assets/logo.png" class="logo-img" alt="INDGEOAI"></a>
+<button class="menu-btn" aria-label="Toggle menu">Menu</button>
 <nav class="nav-links"><a href="index.html" class="">Home</a><a href="about.html" class="active">About</a><a href="skills.html" class="">Skills</a><a href="projects.html" class="">Projects</a><a href="experience.html" class="">Experience</a><a href="publications.html" class="">Publications</a><a href="contact.html" class="">Contact</a></nav>
-<div class="nav-actions"><a class="header-cta" href="contact.html">Get In Touch →</a></div>
+<div class="nav-actions"><a class="cta" href="contact.html">Get In Touch</a></div>
 </div></header><main>
-<section class="container page-hero reveal"><div><div class="kicker">About</div><h1>GIS foundations. Remote sensing depth. <span class="gradient-text">AI capability.</span></h1><p>A geospatial career built across spatial data, enterprise GIS, earth observation, automation and applied machine learning.</p></div><div class="page-scene"><img class="page-hero-image" src="assets/hero-geoai-v2.jpg" alt="Synthetic GeoAI globe, satellite, drone and map layers"></div></section>
-<section class="section section-border"><div class="container about-grid">
-<div class="story-card reveal"><div class="dash-title">Professional Profile</div><h2 class="section-title" style="font-size:32px;margin-bottom:16px">Turning geospatial complexity into usable systems.</h2><p>My work connects GIS engineering, remote-sensing interpretation, automation and AI/ML. I focus on solutions that are technically sound, validated, repeatable and practical for real project delivery.</p><p style="margin-top:13px">The portfolio is intentionally public-safe: it describes methods, outcomes and technical capability without exposing client-sensitive information.</p></div>
-<div class="focus-card reveal"><div class="dash-title">Core Focus</div><div class="focus-grid">
-<div class="focus-item"><b>GeoAI</b><span>Machine learning and deep learning for spatial problems.</span></div>
-<div class="focus-item"><b>Remote Sensing</b><span>UAV, multispectral, SAR, LiDAR and satellite imagery.</span></div>
-<div class="focus-item"><b>GIS Automation</b><span>Python, ArcPy, FME and workflow optimization.</span></div>
-<div class="focus-item"><b>Technical Leadership</b><span>QA/QC, methodology, mentoring and delivery.</span></div>
-</div></div>
-</div></section>
+<section class="container page-hero"><div class="eyebrow">About</div><h1>Built on GIS fundamentals. Expanded through <span>AI.</span></h1><p>A career spanning field mapping, enterprise GIS, remote sensing, automation and applied machine learning.</p></section>
+<section class="section"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Profile</div><h2>Geospatial practitioner focused on practical outcomes.</h2></div><p>My work connects spatial data quality, remote-sensing interpretation, GIS automation and AI/ML deployment. I focus on solutions that can be validated, repeated and used in real operational workflows.</p></div>
+<div class="cards">
+<div class="card"><span class="tag">GIS</span><h3>Enterprise & Spatial Systems</h3><p>ArcGIS Pro, Online, Enterprise, Survey123, Field Maps, dashboards, spatial databases and automation.</p></div>
+<div class="card"><span class="tag">Remote Sensing</span><h3>Earth Observation</h3><p>UAV, multispectral, LiDAR, SAR and satellite analysis for environmental and engineering applications.</p></div>
+<div class="card"><span class="tag">AI / ML</span><h3>Applied GeoAI</h3><p>Semantic segmentation, object detection, Random Forest terrain models, OCR and API-based deployment.</p></div>
+<div class="card"><span class="tag">Leadership</span><h3>Technical Delivery</h3><p>Project leadership, QA/QC, analyst mentoring, methodology design and stakeholder communication.</p></div>
+</div></div></section>
 </main><footer class="footer"><div class="container">
 <div class="footer-grid">
-<div><img src="assets/logo.png" class="footer-logo" alt="INDGEOAI"><p style="margin-top:10px">Geospatial intelligence, remote sensing and applied AI for practical spatial decision-making.</p></div>
-<div class="footer-col"><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a></div>
+<div><img src="assets/logo.png" class="footer-logo" alt="INDGEOAI"><p style="margin-top:12px">Geospatial intelligence, remote sensing and applied AI for practical spatial decision-making.</p></div>
+<div class="footer-col"><h4>Explore</h4><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a></div>
 <div class="footer-col"><h4>Career</h4><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></div>
-<div class="footer-col"><h4>Privacy</h4><p>Client names, exact project locations, coordinates, private phone numbers and confidential project material are not published.</p></div>
-</div>
-<div class="footer-bottom">
-  <span>© 2026 INDGEOAI. All rights reserved.</span>
-</div>
-</div></footer><script src="indgeoai-v5.js?v=8"></script></body></html>
+<div class="footer-col"><h4>Privacy</h4><p>No phone number, home address, tracking scripts or confidential client material is published.</p></div>
+</div><div class="footer-bottom"><span>© 2026 INDGEOAI</span><span>HTTPS · Static site · GitHub Pages</span></div>
+</div></footer><script src="indgeoai-v4.js?v=4"></script></body></html>
