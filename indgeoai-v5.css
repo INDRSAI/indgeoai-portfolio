@@ -732,3 +732,10 @@ main > .section{
   border-color:var(--cyan) !important;
   color:#061c23 !important;
 }
+/*innovation CTA on one line */
+.project-inquiry .header-cta{
+  white-space: nowrap;
+  min-width: 190px;
+  justify-content: center;
+  text-align: center;
+}
