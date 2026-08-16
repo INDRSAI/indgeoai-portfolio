@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Public-safe technical details for selected INDGEOAI projects.">
+<title>Project Details | INDGEOAI</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="indgeoai-v5.css?v=8">
+</head><body><div class="bg-grid"></div><header class="site-header"><div class="container nav">
+<a href="index.html"><img class="logo-img" src="assets/logo.png" alt="INDGEOAI logo"></a>
+<button class="menu-btn" aria-label="Open navigation">Menu</button>
+<nav class="nav-links"><a href="index.html" class="active">Home</a><a href="about.html" class="">About</a><a href="skills.html" class="">Skills</a><a href="projects.html" class="">Projects</a><a href="experience.html" class="">Experience</a><a href="publications.html" class="">Publications</a><a href="contact.html" class="">Contact</a></nav>
+<div class="nav-actions"><a class="header-cta" href="contact.html">Get In Touch →</a></div>
+</div></header><main>
+<section class="container page-hero reveal"><div><div class="kicker">Case Studies</div><h1>Technical <span class="gradient-text">Project Details.</span></h1><p>Public-safe technical summaries focused on methods, measurable outcomes and tools. Client identities, exact project locations and confidential deliverables remain omitted.</p></div><div class="page-scene"><img class="page-hero-image" src="assets/hero-geoai-v2.jpg" alt="Synthetic GeoAI illustration"></div></section>
+<section class="section section-border"><div class="container detail-projects">
+<section id="multispectral-land-cover" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">Deep Learning</div><h2>Multispectral Land-Cover Classification</h2><p>Semantic segmentation of complex inland and coastal land-cover using RGB + NIR imagery.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Built a custom U-Net semantic-segmentation workflow with a ResNet-34 backbone.</li><li>Worked with processed RGB + NIR JP2 imagery where original reflectance values were unavailable.</li><li>Defined nine target classes and prepared a grid-based training/sample workflow.</li><li>Reported overall F1 above 94% in the supplied assessment.</li></ul><div class="skill-tags"><span class="skill-tag">PyTorch</span><span class="skill-tag">U-Net</span><span class="skill-tag">ResNet-34</span><span class="skill-tag">RGB + NIR</span><span class="skill-tag">ArcGIS</span></div>
+</section>
+<section id="terrain-gully" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">Machine Learning</div><h2>Terrain-Based Gully Detection</h2><p>Large-scale terrain ML workflow for automated gully detection from very high-resolution DEM derivatives.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Modeled approximately 6.188 million samples using 13 terrain-derived features.</li><li>Reused cleaned historical samples to reduce repetitive annotation effort.</li><li>Used independent train/test splitting and 5-fold stratified cross-validation.</li><li>Reported mean CV AUC 0.9652, test AUC 0.9650 and F1 0.8224.</li><li>Validated temporal generalization on a later DEM without retraining.</li></ul><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Random Forest</span><span class="skill-tag">DEM</span><span class="skill-tag">Hydrology</span><span class="skill-tag">scikit-learn</span></div>
+</section>
+<section id="ocr-automation" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">AI Automation</div><h2>OCR Model Deployment &amp; Workflow Automation</h2><p>Production-oriented OCR deployment integrated with GIS and automated business workflows.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Integrated a fine-tuned OCR model behind FastAPI inference services.</li><li>Designed API endpoints for text extraction from field-captured imagery.</li><li>Connected GIS, API and workflow automation to update feature attributes and log outputs.</li><li>Packaged OCR capabilities into GIS tooling to reduce manual transcription.</li></ul><div class="skill-tags"><span class="skill-tag">TrOCR</span><span class="skill-tag">FastAPI</span><span class="skill-tag">ArcGIS Online</span><span class="skill-tag">Power Automate</span><span class="skill-tag">Python</span></div>
+</section>
+<section id="vegetation-drone" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">Remote Sensing</div><h2>Vegetation Mapping from Drone Imagery</h2><p>Object-based vegetation mapping using multispectral UAV imagery and vegetation indices.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Processed RGB, NIR and Red Edge drone imagery.</li><li>Computed NDVI, NDRE and MSAVI to support segmentation and vegetation discrimination.</li><li>Performed object-based segmentation/classification in eCognition.</li><li>Integrated domain-expert input to refine the classification schema.</li></ul><div class="skill-tags"><span class="skill-tag">UAV</span><span class="skill-tag">eCognition</span><span class="skill-tag">NDVI</span><span class="skill-tag">NDRE</span><span class="skill-tag">MSAVI</span></div>
+</section>
+<section id="sar-wetlands" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">SAR</div><h2>Wetland Classification using SAR</h2><p>L-band SAR preprocessing, decomposition and classification workflow for wetland mapping.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Performed radiometric calibration, speckle filtering and terrain correction.</li><li>Generated Freeman-Durden and Touzi decomposition layers.</li><li>Combined SAR outputs with terrain-derived ancillary information.</li><li>Focused classification refinement on forested wetlands, emergent wetlands and open water.</li></ul><div class="skill-tags"><span class="skill-tag">ALOS PALSAR</span><span class="skill-tag">ESA SNAP</span><span class="skill-tag">SAR</span><span class="skill-tag">DEM</span><span class="skill-tag">Wetlands</span></div>
+</section>
+<section id="vegetation-health" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">Monitoring</div><h2>Vegetation Health Monitoring</h2><p>Time-series vegetation-condition monitoring using high-resolution imagery and MSAVI.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Computed MSAVI and performed multi-date trend analysis.</li><li>Produced zone-level statistical summaries for vegetation condition.</li><li>Integrated medium-resolution satellite indices for longer-term context.</li><li>Delivered analysis-ready summaries and geospatial layers.</li></ul><div class="skill-tags"><span class="skill-tag">MSAVI</span><span class="skill-tag">WorldView</span><span class="skill-tag">Sentinel-2</span><span class="skill-tag">Landsat</span><span class="skill-tag">ArcGIS Pro</span></div>
+</section>
+<section id="historical-imagery" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">Deep Learning</div><h2>Historical Aerial Image Classification</h2><p>Proof-of-concept deep-learning classification for archival black-and-white aerial imagery.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Applied contrast correction, denoising and band-stacking preprocessing.</li><li>Converted single-band grayscale inputs into model-ready multidimensional representations.</li><li>Used pretrained CNN backbones for classification.</li><li>Reported greater than 90% proof-of-concept classification accuracy.</li></ul><div class="skill-tags"><span class="skill-tag">Deep Learning</span><span class="skill-tag">CNN</span><span class="skill-tag">Image Enhancement</span><span class="skill-tag">Python</span></div>
+</section>
+<section id="dem-automation" class="detail-project reveal">
+<div class="detail-project-head"><div><div class="kicker">Automation</div><h2>Automated DEM Download &amp; Mosaicking</h2><p>Python automation for bulk DEM acquisition and mosaicking.</p></div><a class="back-link" href="projects.html">← Projects</a></div>
+<ul class="detail-bullets"><li>Automated tile discovery, download and mosaicking from public elevation-data services.</li><li>Added parameterized area selection for reusable workflows.</li><li>Reduced manual download effort by an estimated 70–80%.</li></ul><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">DEM</span><span class="skill-tag">Automation</span><span class="skill-tag">USGS</span></div>
+</section></div></section>
+</main><footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><img src="assets/logo.png" class="footer-logo" alt="INDGEOAI"><p style="margin-top:10px">Geospatial intelligence, remote sensing and applied AI for practical spatial decision-making.</p></div>
+<div class="footer-col"><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a></div>
+<div class="footer-col"><h4>Career</h4><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></div>
+<div class="footer-col"><h4>Privacy</h4><p>Client names, exact project locations, coordinates, private phone numbers and confidential project material are not published.</p></div>
+</div>
+<div class="footer-bottom"><span>© 2026 INDGEOAI. All rights reserved.</span><span>HTTPS · Static site · GitHub Pages</span></div>
+</div></footer><script src="indgeoai-v5.js?v=8"></script></body></html>

@@ -1,1 +1,1 @@
-INDGEOAI V6 — updated design
+INDGEOAI V8 — technical details
