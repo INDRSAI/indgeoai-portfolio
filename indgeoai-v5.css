@@ -374,3 +374,327 @@ h1,h2,h3,h4{font-family:var(--display)}
     object-position: center !important;
   }
 }
+
+
+/* =========================================================
+   V9 HYBRID PROFESSIONAL THEME
+   Dark branded header/hero/footer + light consulting content
+   ========================================================= */
+
+:root{
+  --light-bg:#f4f7fa;
+  --light-bg-2:#eef3f7;
+  --light-card:#ffffff;
+  --light-border:#d8e2ea;
+  --light-border-strong:#c7d5df;
+  --light-heading:#102a43;
+  --light-text:#40556a;
+  --light-muted:#667b8f;
+  --light-shadow:0 12px 32px rgba(16,42,67,.07);
+}
+
+/* Keep the branded hero/header areas dark. */
+.site-header,
+.home-hero,
+.page-hero{
+  color:var(--text);
+}
+
+/* Main content sections become clean, consulting-style light surfaces. */
+main > .section,
+main > section.section{
+  background:var(--light-bg);
+  color:var(--light-heading);
+}
+
+main > .section.section-border,
+main > section.section.section-border{
+  border-top:1px solid var(--light-border);
+}
+
+/* A subtle alternating light section can be used without becoming stark white. */
+main > .section:nth-of-type(even){
+  background:var(--light-bg-2);
+}
+
+/* General text treatment inside light content sections. */
+main > .section h1,
+main > .section h2,
+main > .section h3,
+main > .section h4,
+main > .section b,
+main > .section strong{
+  color:var(--light-heading);
+}
+
+main > .section p,
+main > .section li,
+main > .section span:not(.pill):not(.skill-tag):not(.filter-btn),
+main > .section .section-copy{
+  color:var(--light-text);
+}
+
+main > .section .kicker,
+main > .section .dash-title{
+  color:#0c9f91;
+}
+
+/* Preserve branded accent/metric colors where they are intentional. */
+main > .section .gradient-text{
+  background:linear-gradient(135deg,#0cae9c,#149bc9 52%,#347fd9);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* Shared light card system */
+.project-card,
+.detail-project,
+.dash-card,
+.story-card,
+.focus-card,
+.skill-card,
+.pub-card,
+.contact-card,
+.project-inquiry,
+.service-card,
+.career-wrap{
+  background:var(--light-card) !important;
+  border-color:var(--light-border) !important;
+  box-shadow:var(--light-shadow);
+  color:var(--light-heading);
+}
+
+.project-card:hover,
+.detail-project:hover,
+.dash-card:hover,
+.skill-card:hover,
+.contact-card:hover,
+.service-card:hover{
+  border-color:var(--light-border-strong) !important;
+  box-shadow:0 16px 38px rgba(16,42,67,.10);
+}
+
+/* Project cards */
+.project-body h3,
+.detail-project h2{
+  color:var(--light-heading);
+}
+
+.project-card p,
+.detail-project p,
+.detail-bullets,
+.detail-bullets li{
+  color:var(--light-text) !important;
+}
+
+.project-art{
+  border-bottom:1px solid var(--light-border);
+}
+
+/* Keep tags colorful on the light background. */
+.pill{
+  background:#effaf8;
+  border-color:#a9ddd7;
+  color:#087f75;
+}
+.pill.green{
+  background:#f3faed;
+  border-color:#c7e5ae;
+  color:#4f8d2d;
+}
+.pill.blue{
+  background:#edf7ff;
+  border-color:#b7d8f1;
+  color:#2677ad;
+}
+
+.card-arrow,
+.back-link{
+  background:#f4fbfa;
+  border-color:#b6ddd9;
+  color:#088d82;
+}
+
+/* Filters on Projects page */
+.filters{
+  margin-top:4px;
+}
+
+.filter-btn{
+  background:#ffffff;
+  color:#53697d;
+  border-color:var(--light-border);
+  box-shadow:0 2px 8px rgba(16,42,67,.03);
+}
+
+.filter-btn:hover{
+  color:var(--light-heading);
+  border-color:#9eb5c6;
+}
+
+.filter-btn.active{
+  color:#ffffff;
+  border-color:#0da998;
+  background:linear-gradient(135deg,#0b988a,#12b7a5);
+}
+
+/* Experience / dashboard components */
+.career-step{
+  border-right-color:var(--light-border);
+}
+
+.career-track:after{
+  background:linear-gradient(90deg,#12b6a5,#179ecb,#397fd0,#e7aa32);
+}
+
+.career-year{
+  color:#0e948a;
+}
+
+.career-step p,
+.dash-row span,
+.education-item span,
+.glance-item span,
+.bullet-list{
+  color:var(--light-text) !important;
+}
+
+.dash-icon,
+.metric-icon{
+  background:#eef9f8;
+  border-color:#b8dfdc;
+  color:#0b9489;
+}
+
+.skill-mini div,
+.focus-item{
+  background:#f7fafc;
+  border-color:var(--light-border);
+  color:var(--light-text);
+}
+
+/* Skills page */
+.skill-tag{
+  background:#f6f9fb;
+  border-color:var(--light-border);
+  color:#40556a;
+}
+
+/* Publications */
+.pub-item{
+  border-bottom-color:var(--light-border);
+}
+
+.pub-item small{
+  color:#0b9187;
+}
+
+.award{
+  background:#fbfcfd;
+  border-color:var(--light-border);
+}
+
+.award .icon{
+  background:#fff9e9;
+  border-color:#e9d39a;
+  color:#c78d16;
+}
+
+/* Contact page */
+.form-card{
+  border-left-color:var(--light-border);
+}
+
+.form-card h2{
+  color:#0a8f88;
+}
+
+.contact-form{
+  background:#ffffff;
+  border-color:var(--light-border);
+  box-shadow:var(--light-shadow);
+}
+
+.contact-form input,
+.contact-form textarea{
+  background:#f8fafc;
+  border-color:var(--light-border);
+  color:var(--light-heading);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:#8798a8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:#14b5a5;
+  box-shadow:0 0 0 3px rgba(20,181,165,.10);
+}
+
+/* Section spacing: turn large dark blank bands into intentional light space. */
+main > .section{
+  padding-top:72px;
+  padding-bottom:76px;
+}
+
+/* The metric bar on Home stays dark as a premium transition element. */
+.metric-bar{
+  background:linear-gradient(180deg,rgba(18,47,69,.96),rgba(11,33,51,.95));
+  color:var(--text);
+}
+
+.metric-bar strong{
+  color:var(--cyan);
+}
+
+.metric-bar span{
+  color:var(--muted);
+}
+
+/* Footer remains dark and visually separate. */
+.footer{
+  background:#071a2a !important;
+  color:var(--text);
+  border-top:1px solid rgba(255,255,255,.07);
+}
+
+.footer h4{
+  color:var(--text);
+}
+
+.footer p,
+.footer a{
+  color:var(--muted);
+}
+
+/* Responsive refinements for the hybrid layout */
+@media(max-width:920px){
+  main > .section{
+    padding-top:58px;
+    padding-bottom:62px;
+  }
+}
+
+@media(max-width:640px){
+  main > .section{
+    padding-top:46px;
+    padding-bottom:50px;
+  }
+
+  .project-card,
+  .detail-project,
+  .dash-card,
+  .story-card,
+  .focus-card,
+  .skill-card,
+  .pub-card,
+  .contact-card,
+  .project-inquiry,
+  .service-card,
+  .career-wrap{
+    box-shadow:0 8px 24px rgba(16,42,67,.06);
+  }
+}
