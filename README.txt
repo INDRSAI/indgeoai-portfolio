@@ -1,1 +1,1 @@
-INDGEOAI V8 — technical details
+INDGEOAI — Complete Profile
