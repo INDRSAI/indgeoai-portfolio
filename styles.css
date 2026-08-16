@@ -195,7 +195,7 @@ button,input,textarea{font:inherit}
 .form textarea{grid-column:1/-1;min-height:140px;resize:vertical}
 .form .btn{grid-column:1/-1;justify-content:center}
 
-.footer{border-top:1px solid rgba(255,255,255,.06);padding:34px 0 26px;margin-top:40px}
+.footer{border-top:1px solid rgba(255,255,255,.06);padding:34px 0 26px;margin-top:0;background:var(--bg)}
 .footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:30px}
 .footer-logo{height:62px;width:auto}
 .footer p,.footer a{color:var(--muted);font-size:12.5px}
