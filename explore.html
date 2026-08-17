@@ -29,6 +29,94 @@
 .explore-note{margin-top:16px;font-size:11px;color:#667b8f!important}
 @media(max-width:920px){.explore-shell{grid-template-columns:1fr}#geoai-map{height:560px;min-height:0}}
 @media(max-width:640px){#geoai-map{height:480px}}
+
+.geoai-agent{
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px solid #d8e2ea;
+}
+.geoai-agent h4{
+  color:#102a43;
+  font-size:14px;
+  margin-bottom:8px;
+}
+.agent-input-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+}
+#agent-input{
+  width:100%;
+  border:1px solid #d8e2ea;
+  border-radius:10px;
+  padding:11px 12px;
+  color:#102a43;
+  background:#fff;
+  outline:none;
+}
+#agent-input:focus{
+  border-color:#4da9ff;
+  box-shadow:0 0 0 3px rgba(77,169,255,.10);
+}
+#agent-run{
+  border:1px solid #4da9ff;
+  background:#4da9ff;
+  color:#071a2a;
+  border-radius:10px;
+  padding:11px 14px;
+  font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+}
+#agent-run:hover{background:#22bff4;border-color:#22bff4}
+.agent-suggestions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:10px;
+}
+.agent-chip{
+  border:1px solid #d8e2ea;
+  background:#f7fafc;
+  color:#40556a;
+  border-radius:999px;
+  padding:6px 9px;
+  font-size:10.5px;
+  cursor:pointer;
+}
+.agent-chip:hover{
+  border-color:#4da9ff;
+  color:#102a43;
+  background:#eef7ff;
+}
+.agent-response{
+  margin-top:10px;
+  min-height:52px;
+  padding:11px 12px;
+  border-radius:10px;
+  background:#f8fafc;
+  border:1px solid #d8e2ea;
+  color:#52687a;
+  font-size:11px;
+  line-height:1.5;
+}
+.agent-response b{color:#102a43}
+.agent-spinner{
+  display:inline-block;
+  width:12px;height:12px;
+  border:2px solid #bcd7ee;
+  border-top-color:#4da9ff;
+  border-radius:50%;
+  animation:agentSpin .8s linear infinite;
+  vertical-align:-2px;
+  margin-right:6px;
+}
+@keyframes agentSpin{to{transform:rotate(360deg)}}
+@media(max-width:640px){
+  .agent-input-row{grid-template-columns:1fr}
+  #agent-run{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -60,6 +148,25 @@
 <button class="explore-control" id="btn-clear">Clear Demo Features</button>
 </div>
 <div class="explore-status" id="explore-status">Leaflet map ready with satellite imagery. Pan, zoom, switch basemaps, click the map, or enable the synthetic demo features.</div>
+
+<div class="geoai-agent">
+  <h4>GeoAI Assistant</h4>
+  <p>Ask the map to find a place or control the current view.</p>
+  <div class="agent-input-row">
+    <input id="agent-input" type="text" maxlength="120" autocomplete="off" spellcheck="false" placeholder="e.g. Find Pune or switch to satellite">
+    <button id="agent-run" type="button">Run</button>
+  </div>
+  <div class="agent-suggestions" aria-label="Example GeoAI Assistant commands">
+    <button class="agent-chip" type="button" data-command="Find Pune">Find Pune</button>
+    <button class="agent-chip" type="button" data-command="Find Nagpur">Find Nagpur</button>
+    <button class="agent-chip" type="button" data-command="Switch to satellite">Satellite</button>
+    <button class="agent-chip" type="button" data-command="Show demo layer">Demo layer</button>
+  </div>
+  <div class="agent-response" id="agent-response" aria-live="polite">
+    <b>Agent ready.</b> Try “Find Pune”, “Switch to satellite”, “Show demo layer”, or “Clear map”.
+  </div>
+</div>
+
 <p class="explore-note">Demo only. No private data, client coordinates, credentials or AI model files are exposed on this page.</p>
 </aside>
 
@@ -136,6 +243,173 @@ document.getElementById('btn-clear').addEventListener('click',()=>{
  if(map.hasLayer(demoLayer)) map.removeLayer(demoLayer);
  status.textContent='Synthetic demo features cleared.';
 });
+
+// --- Basic GeoAI Assistant: frontend-only, no secret keys ---
+const agentInput=document.getElementById('agent-input');
+const agentRun=document.getElementById('agent-run');
+const agentResponse=document.getElementById('agent-response');
+let geocodeMarker=null;
+let lastGeocodeAt=0;
+
+function agentSay(message){
+  agentResponse.innerHTML=message;
+}
+
+function setBasemap(layer){
+  if(map.hasLayer(osm)) map.removeLayer(osm);
+  if(map.hasLayer(satellite)) map.removeLayer(satellite);
+  layer.addTo(map);
+}
+
+function clearGeoMarker(){
+  if(geocodeMarker){
+    map.removeLayer(geocodeMarker);
+    geocodeMarker=null;
+  }
+}
+
+async function geocodePlace(place){
+  const now=Date.now();
+  const wait=Math.max(0,1000-(now-lastGeocodeAt));
+  if(wait>0){
+    await new Promise(resolve=>setTimeout(resolve,wait));
+  }
+  lastGeocodeAt=Date.now();
+
+  agentSay('<span class="agent-spinner"></span>Searching for <b>'+escapeHtml(place)+'</b>…');
+
+  const endpoint='https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q='+encodeURIComponent(place);
+  try{
+    const res=await fetch(endpoint,{
+      headers:{'Accept':'application/json'}
+    });
+    if(!res.ok) throw new Error('Geocoding service returned '+res.status);
+    const data=await res.json();
+
+    if(!Array.isArray(data)||data.length===0){
+      agentSay('I could not find <b>'+escapeHtml(place)+'</b>. Try a city, region or country name.');
+      return;
+    }
+
+    const item=data[0];
+    const lat=Number(item.lat), lon=Number(item.lon);
+    if(!Number.isFinite(lat)||!Number.isFinite(lon)) throw new Error('Invalid coordinates');
+
+    clearGeoMarker();
+    geocodeMarker=L.marker([lat,lon]).addTo(map)
+      .bindPopup('<b>'+escapeHtml(item.display_name)+'</b><br>Located by geocoding.')
+      .openPopup();
+
+    map.setView([lat,lon],12);
+    agentSay('✓ Located <b>'+escapeHtml(item.display_name)+'</b>.');
+    status.textContent='Geocoder located '+item.display_name+'.';
+  }catch(err){
+    console.error(err);
+    agentSay('The geocoding service is temporarily unavailable. Please try again in a moment.');
+  }
+}
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g,ch=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  }[ch]));
+}
+
+async function runAgentCommand(raw){
+  const command=raw.trim();
+  if(!command) return;
+
+  const q=command.toLowerCase();
+
+  if(q.includes('satellite')){
+    setBasemap(satellite);
+    agentSay('✓ Switched to <b>Satellite Imagery</b>.');
+    return;
+  }
+
+  if(q.includes('openstreetmap') || q==='osm' || q.includes('street map')){
+    setBasemap(osm);
+    agentSay('✓ Switched to <b>OpenStreetMap</b>.');
+    return;
+  }
+
+  if(q.includes('show demo')){
+    demoLayer.addTo(map);
+    map.fitBounds(demoLayer.getBounds(),{padding:[35,35]});
+    agentSay('✓ <b>Synthetic GeoAI Demo</b> features are visible.');
+    return;
+  }
+
+  if(q.includes('hide demo')){
+    if(map.hasLayer(demoLayer)) map.removeLayer(demoLayer);
+    agentSay('✓ Synthetic demo layer hidden.');
+    return;
+  }
+
+  if(q.includes('clear map') || q==='clear'){
+    if(map.hasLayer(demoLayer)) map.removeLayer(demoLayer);
+    clearGeoMarker();
+    agentSay('✓ Temporary demo and geocoder layers cleared.');
+    return;
+  }
+
+  if(q.includes('zoom in')){
+    map.zoomIn();
+    agentSay('✓ Zoomed in.');
+    return;
+  }
+
+  if(q.includes('zoom out')){
+    map.zoomOut();
+    agentSay('✓ Zoomed out.');
+    return;
+  }
+
+  if(q.includes('reset')){
+    map.setView([20.5937,78.9629],5);
+    agentSay('✓ Map view reset.');
+    return;
+  }
+
+  if(q.includes('what layers') || q.includes('active layers')){
+    const base=map.hasLayer(satellite)?'Satellite Imagery':'OpenStreetMap';
+    const overlays=[];
+    if(map.hasLayer(demoLayer)) overlays.push('Synthetic GeoAI Demo');
+    if(geocodeMarker) overlays.push('Geocoder marker');
+    agentSay('<b>Basemap:</b> '+base+'<br><b>Overlays:</b> '+(overlays.length?overlays.join(', '):'None'));
+    return;
+  }
+
+  const match=command.match(/^(?:find|go to|locate|search for|zoom to)\s+(.+)$/i);
+  if(match && match[1]){
+    await geocodePlace(match[1].trim());
+    return;
+  }
+
+  // Treat short plain text as a place search for this basic agent.
+  if(command.length<=60 && !/[?]/.test(command)){
+    await geocodePlace(command);
+    return;
+  }
+
+  agentSay('I currently understand map commands such as <b>Find Pune</b>, <b>Switch to satellite</b>, <b>Show demo layer</b>, <b>Zoom in</b>, and <b>Clear map</b>.');
+}
+
+agentRun.addEventListener('click',()=>runAgentCommand(agentInput.value));
+agentInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    e.preventDefault();
+    runAgentCommand(agentInput.value);
+  }
+});
+document.querySelectorAll('.agent-chip').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const cmd=btn.dataset.command||'';
+    agentInput.value=cmd;
+    runAgentCommand(cmd);
+  });
+});
+
 </script>
 </body>
 </html>
