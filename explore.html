@@ -59,7 +59,7 @@
 <button class="explore-control" id="btn-demo">Show Demo GeoAI Features</button>
 <button class="explore-control" id="btn-clear">Clear Demo Features</button>
 </div>
-<div class="explore-status" id="explore-status">Leaflet map ready. Pan, zoom, click the map, or enable the synthetic demo features.</div>
+<div class="explore-status" id="explore-status">Leaflet map ready with satellite imagery. Pan, zoom, switch basemaps, click the map, or enable the synthetic demo features.</div>
 <p class="explore-note">Demo only. No private data, client coordinates, credentials or AI model files are exposed on this page.</p>
 </aside>
 
@@ -90,7 +90,17 @@ const map=L.map('geoai-map').setView([20.5937,78.9629],5);
 const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
  maxZoom:19,
  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+});
+
+const satellite=L.tileLayer(
+ 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+ {
+   maxZoom:19,
+   attribution:'Tiles &copy; Esri'
+ }
+);
+
+satellite.addTo(map);
 
 const demoLayer=L.layerGroup();
 [
@@ -99,7 +109,16 @@ const demoLayer=L.layerGroup();
  L.polygon([[17.90,75.90],[18.25,76.40],[17.85,76.85],[17.55,76.25]],{weight:2,fillOpacity:.18}).bindPopup('<b>Demo Classification Polygon</b><br>Synthetic vector result.')
 ].forEach(f=>demoLayer.addLayer(f));
 
-L.control.layers({'OpenStreetMap':osm},{'Synthetic GeoAI Demo':demoLayer},{collapsed:false}).addTo(map);
+L.control.layers(
+  {
+    'Satellite Imagery':satellite,
+    'OpenStreetMap':osm
+  },
+  {
+    'Synthetic GeoAI Demo':demoLayer
+  },
+  {collapsed:false}
+).addTo(map);
 
 const status=document.getElementById('explore-status');
 map.on('click',e=>{status.textContent=`Map clicked at ${e.latlng.lat.toFixed(5)}, ${e.latlng.lng.toFixed(5)}.`});
