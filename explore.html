@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="INDGEOAI Explore — interactive geospatial mapping and GeoAI demonstrations.">
+<title>GeoAI Explore | INDGEOAI</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="indgeoai-v5.css?v=10">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+ integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+<style>
+.explore-shell{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:stretch}
+.explore-panel{background:#fff;border:1px solid var(--light-border,#d8e2ea);border-radius:16px;padding:20px;box-shadow:0 12px 32px rgba(16,42,67,.07)}
+.explore-panel h3{color:#102a43;font-size:18px;margin-bottom:8px}
+.explore-panel p{color:#52687a!important;font-size:12.5px}
+.explore-actions{display:grid;gap:10px;margin-top:18px}
+.explore-control{width:100%;border:1px solid #d8e2ea;background:#f7fafc;color:#102a43;border-radius:10px;padding:11px 12px;text-align:left;cursor:pointer;transition:.18s ease}
+.explore-control:hover{border-color:#4da9ff;background:#eef7ff;transform:translateY(-1px)}
+.explore-status{margin-top:18px;padding:12px;border:1px solid #d8e2ea;border-radius:10px;background:#f8fafc;color:#52687a;font-size:11px}
+.explore-map-card{position:relative;overflow:hidden;border:1px solid var(--light-border,#d8e2ea);border-radius:16px;background:#fff;box-shadow:0 12px 32px rgba(16,42,67,.07)}
+#geoai-map{width:100%;min-height:620px;height:68vh}
+.map-badge{position:absolute;z-index:500;left:18px;top:18px;background:rgba(7,26,42,.88);color:#f5f8fb;border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:8px 12px;font:600 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(8px)}
+.explore-note{margin-top:16px;font-size:11px;color:#667b8f!important}
+@media(max-width:920px){.explore-shell{grid-template-columns:1fr}#geoai-map{height:560px;min-height:0}}
+@media(max-width:640px){#geoai-map{height:480px}}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<header class="site-header"><div class="container nav">
+<a href="index.html"><img class="logo-img" src="assets/logo.png" alt="INDGEOAI logo"></a>
+<button class="menu-btn" aria-label="Open navigation">Menu</button>
+<nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="explore.html" class="active">GeoAI Explore</a><a href="contact.html">Contact</a></nav>
+<div class="nav-actions"><a class="header-cta" href="contact.html">Get In Touch →</a></div>
+</div></header>
+
+<main>
+<section class="container page-hero reveal">
+<div><div class="kicker">GeoAI Explore</div><h1>Interactive geospatial <span class="gradient-text">exploration.</span></h1><p>Explore an interactive Leaflet map designed as the frontend foundation for future GeoAI model demonstrations, spatial outputs and AI-assisted workflows.</p></div>
+<div class="page-scene"><img class="page-hero-image" src="assets/hero-geoai-v2.jpg" alt="Synthetic GeoAI globe, satellite, drone and map layers"></div>
+</section>
+
+<section class="section section-border"><div class="container">
+<div class="section-head"><div class="left"><div class="kicker">Interactive Workspace</div><h2 class="section-title">Leaflet Map Explorer</h2></div><p class="section-copy">This first version adds the mapping interface only. AI inference can be connected later through a secure model API.</p></div>
+
+<div class="explore-shell">
+<aside class="explore-panel reveal">
+<h3>Explore Controls</h3>
+<p>Use these controls to test the map interaction. Demo features are synthetic and do not represent client or project locations.</p>
+<div class="explore-actions">
+<button class="explore-control" id="btn-home">Reset Map View</button>
+<button class="explore-control" id="btn-demo">Show Demo GeoAI Features</button>
+<button class="explore-control" id="btn-clear">Clear Demo Features</button>
+</div>
+<div class="explore-status" id="explore-status">Leaflet map ready. Pan, zoom, click the map, or enable the synthetic demo features.</div>
+<p class="explore-note">Demo only. No private data, client coordinates, credentials or AI model files are exposed on this page.</p>
+</aside>
+
+<div class="explore-map-card reveal">
+<div class="map-badge">Leaflet · Interactive GIS</div>
+<div id="geoai-map" aria-label="Interactive GeoAI Leaflet map"></div>
+</div>
+</div>
+</div></section>
+</main>
+
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div><img src="assets/logo.png" class="footer-logo" alt="INDGEOAI"><p style="margin-top:10px">Geospatial intelligence, remote sensing and applied AI for practical spatial decision-making.</p></div>
+<div class="footer-col"><h4>Explore</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="explore.html">GeoAI Explore</a></div>
+<div class="footer-col"><h4>Career</h4><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="contact.html">Contact</a></div>
+<div class="footer-col"><h4>Privacy</h4><p>Client names, exact project locations, coordinates, private phone numbers and confidential project material are not published.</p></div>
+</div>
+<div class="footer-bottom"><span>© 2026 INDGEOAI. All rights reserved.</span></div>
+</div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="indgeoai-v5.js?v=10"></script>
+<script>
+const map=L.map('geoai-map').setView([20.5937,78.9629],5);
+
+const osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+ maxZoom:19,
+ attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+const demoLayer=L.layerGroup();
+[
+ L.circle([18.52,73.86],{radius:45000,weight:2,fillOpacity:.15}).bindPopup('<b>Synthetic GeoAI Demo Area</b><br>Example analysis footprint only.'),
+ L.marker([19.08,72.88]).bindPopup('<b>Demo Detection</b><br>Example point result for future AI output.'),
+ L.polygon([[17.90,75.90],[18.25,76.40],[17.85,76.85],[17.55,76.25]],{weight:2,fillOpacity:.18}).bindPopup('<b>Demo Classification Polygon</b><br>Synthetic vector result.')
+].forEach(f=>demoLayer.addLayer(f));
+
+L.control.layers({'OpenStreetMap':osm},{'Synthetic GeoAI Demo':demoLayer},{collapsed:false}).addTo(map);
+
+const status=document.getElementById('explore-status');
+map.on('click',e=>{status.textContent=`Map clicked at ${e.latlng.lat.toFixed(5)}, ${e.latlng.lng.toFixed(5)}.`});
+
+document.getElementById('btn-home').addEventListener('click',()=>{
+ map.setView([20.5937,78.9629],5);
+ status.textContent='Map view reset.';
+});
+document.getElementById('btn-demo').addEventListener('click',()=>{
+ demoLayer.addTo(map);
+ map.fitBounds(demoLayer.getBounds(),{padding:[35,35]});
+ status.textContent='Synthetic GeoAI demo features are visible.';
+});
+document.getElementById('btn-clear').addEventListener('click',()=>{
+ if(map.hasLayer(demoLayer)) map.removeLayer(demoLayer);
+ status.textContent='Synthetic demo features cleared.';
+});
+</script>
+</body>
+</html>
